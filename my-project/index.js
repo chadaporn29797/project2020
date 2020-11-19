@@ -1,19 +1,24 @@
 /* eslint-disable prettier/prettier */
 // module.exports = require('./src');
 // eslint-disable-next-line no-unused-vars
-// const test = require('./test2.js')
+// const test = require('./test')
+// const test2 = JSON.stringify(test);
 
 module.exports = async function App(context) {
   if (context.event.text === 'ลงขายสินค้า') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_2_ID);
+  
   } else if (context.event.text === 'รายการสินค้า') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_3_ID);
+  
   } else if (context.event.text === 'ค้นหาสินค้า') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_4_ID);
+    
   } else if (context.event.text === 'หมวดหมู่สินค้า') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_5_ID);
+  
   // } else if (context.event.text === 'หมวดหมู่สินค้า') {
-  //   await context.sendFlex('This is an advanced flex', test.dict2);
+  //   await context.sendFlex('This is an advanced flex',  test );
     
   } else if (context.event.text === 'บริจาค') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_6_ID);
@@ -1180,9 +1185,6 @@ module.exports = async function App(context) {
             spacing: 'xl',
             paddingAll: '15px',
           },
-          
-          
-          
         ],
         paddingAll: '0px',
       },
@@ -1468,6 +1470,74 @@ module.exports = async function App(context) {
         },
       },
     });
+
+  } else if (context.event.text === 'ติดต่อร้านค้า') {
+  const imagemap = {
+    baseUrl: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/contact.png?w=1040',
+    baseSize: {
+      height: 600,
+      width: 1040,
+    },
+    actions: [
+      {
+        //map
+        type: 'message',
+        area: {
+          "x": 383,
+          "y": 13,
+          "width": 318,
+          "height": 284
+        },
+        text: "ที่ตั้ง"
+      },
+      {
+        //facebook
+        type: 'uri',
+        linkUri: 'https://www.facebook.com/bornborn41',
+        area: {
+          "x": 704,
+          "y": 11,
+          "width": 317,
+          "height": 288
+        },
+      },
+      {
+        //line
+        type: 'uri',
+        linkUri: 'http://line.me/ti/p/@zqc5518o',
+        area: {
+          "x": 388,
+          "y": 302,
+          "width": 313,
+          "height": 290
+        },
+      },
+      {
+        //tel
+        type: 'uri',
+        linkUri: 'tel:0848346449',
+        area: {
+          "x": 704,
+          "y": 300,
+          "width": 315,
+          "height": 292
+        },
+      },
+    ],
+  };
+  const altText = 'this is an imagemap';
+  await context.sendImagemap(altText, imagemap);
+
+  } else if (context.event.text === 'ที่ตั้ง') {
+    await context.sendLocation({
+      type: 'location',
+      title: 'ที่ตั้งร้าน',
+      address: 'ศรีสะเกษ', 
+      latitude: 15.1158333,
+      longitude: 104.3300335
+  });
+
+
   } else if (context.event.text === 'วิธีลงขายสินค้า') {
     await context.sendText(
       '1. กดปุ่ม "ตั้งค่าร้านค้า" ก่อนนะครับ จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ หากข้อมูลเพียงพอก็จะสามารถ เพิ่มสินค้าได้ '
