@@ -373,11 +373,23 @@ module.exports = async function App(context) {
                 contents: []
               },
               {
-                type: 'text',
-                text: '+ ใส่ชื่อของสินค้า',
-                color: '#9F9898FF',
-                contents: []
-              }
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่ชื่อของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                  },
+                ]
+              },
             ]
           },
           {
@@ -390,11 +402,23 @@ module.exports = async function App(context) {
                 contents: []
               },
               {
-                type: 'text',
-                text: '+ ใส่รายละเอียดของสินค้า',
-                color: '#9F9898FF',
-                contents: []
-              }
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่รายละเอียดของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                  },
+                ]
+              },
             ]
           },
           {
@@ -407,11 +431,23 @@ module.exports = async function App(context) {
                 contents: []
               },
               {
-                type: 'text',
-                text: '+ ใส่ราคาของสินค้า',
-                color: '#9F9898FF',
-                contents: []
-              }
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่ราคาของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                  },
+                ]
+              },
             ]
           },
           {
@@ -424,11 +460,24 @@ module.exports = async function App(context) {
                 contents: []
               },
               {
-                type: 'text',
-                text: '+ ใส่หมวดหมู่ของสินค้า',
-                color: '#9F9898FF',
-                contents: []
-              }
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่หมวดหมู่ของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                  },
+                ]
+              },
+              
             ]
           }
         ]
