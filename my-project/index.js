@@ -61,7 +61,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/fish.jpg',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/fish.jpg',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -139,7 +139,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                   
                 ],
@@ -162,7 +162,7 @@ module.exports = async function App(context) {
                     size: 'lg',
                     aspectRatio: '1:1',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/garbage.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
                   },
                 ],
               },
@@ -192,7 +192,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/fish.jpg',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/fish.jpg',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -264,7 +264,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                   
                 ],
@@ -287,7 +287,7 @@ module.exports = async function App(context) {
                     size: 'lg',
                     aspectRatio: '1:1',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/garbage.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
                   },
                 ],
               },
@@ -353,7 +353,7 @@ module.exports = async function App(context) {
                 type: 'icon',
                 size: 'lg',
                 url:
-                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
               },
             ]
           },
@@ -386,7 +386,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                 ]
               },
@@ -415,7 +415,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                 ]
               },
@@ -444,7 +444,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                 ]
               },
@@ -473,7 +473,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                 ]
               },
@@ -489,26 +489,9 @@ module.exports = async function App(context) {
       contents: [
         {
           type: 'bubble',
-          header: {
-            type: 'box',
-            layout: 'vertical',
-            flex: 0,
-            backgroundColor: '#47E291FF',
-            contents: [
-              {
-                type: 'text',
-                text: 'ติ๊กช้อป',
-                size: 'lg',
-                color: '#FFFBFBFF',
-                align: 'center',
-                contents: [],
-              },
-            ],
-          },
           hero: {
             type: 'image',
-            url:
-              'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png',
+            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png',
             size: 'full',
             aspectRatio: '20:13',
             aspectMode: 'cover',
@@ -516,102 +499,108 @@ module.exports = async function App(context) {
           body: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
+            spacing: 'md',
             contents: [
               {
                 type: 'text',
-                text: 'เก้าอี้สีขาว',
+                text: 'แฮมเบอร์เกอร์',
                 weight: 'bold',
                 size: 'xl',
-                wrap: true,
-                contents: [],
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    type: 'text',
-                    text: 'เก้าอี้วิเศษ นั่งแล้วจะล่องหนได้',
-                    color: '#636363FF',
-                    contents: [],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '100',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                contents: [
                   {
                     type: 'text',
-                    text: '265',
-                    weight: 'bold',
-                    size: 'xl',
-                    flex: 0,
+                    text: 'แฮมเบอร์เกอร์ ขายส่ง ราคาถูก อร่อยที่สุดในประเทศไทย',
+                    size: 'md',
+                    color: '#AAAAAA',
                     wrap: true,
-                    contents: [],
+                    contents: []
                   },
                   {
-                    type: 'text',
-                    text: 'บาท',
-                    weight: 'bold',
-                    size: 'sm',
-                    flex: 0,
-                    align: 'end',
-                    wrap: true,
-                    contents: [],
-                  },
-                ],
-              },
-            ],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'ติ๊กช้อป',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           footer: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
             contents: [
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ติดต่อร้านค้า',
-                  text: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
                 },
-                style: 'primary',
+                color: '#47E291FF',
+                style: 'primary'
               },
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ดูสินค้าอื่นในร้าน',
-                  text: 'ดูสินค้าอื่นในร้าน',
-                },
-              },
-            ],
-          },
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
         },
         {
           type: 'bubble',
-          header: {
-            type: 'box',
-            layout: 'vertical',
-            flex: 0,
-            backgroundColor: '#47E291FF',
-            contents: [
-              {
-                type: 'text',
-                text: 'ติ๊กช้อป',
-                size: 'lg',
-                color: '#FFFBFBFF',
-                align: 'center',
-                contents: [],
-              },
-            ],
-          },
           hero: {
             type: 'image',
-            url:
-              'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/fish.jpg',
             size: 'full',
             aspectRatio: '20:13',
             aspectMode: 'cover',
@@ -619,102 +608,108 @@ module.exports = async function App(context) {
           body: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
+            spacing: 'md',
             contents: [
               {
                 type: 'text',
-                text: 'เก้าอี้สีขาว',
+                text: 'ปลานิลสด',
                 weight: 'bold',
                 size: 'xl',
-                wrap: true,
-                contents: [],
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    type: 'text',
-                    text: 'เก้าอี้วิเศษ นั่งแล้วจะล่องหนได้',
-                    color: '#636363FF',
-                    contents: [],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '80',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                contents: [
                   {
                     type: 'text',
-                    text: '265',
-                    weight: 'bold',
-                    size: 'xl',
-                    flex: 0,
+                    text: 'ปลานิลสดร้านเจ๊แดง ราคาถูก มีปลาหลากหลายชนิด ลูกสาวเจ้าของร้านก็น่ารักมาก',
+                    size: 'md',
+                    color: '#AAAAAA',
                     wrap: true,
-                    contents: [],
+                    contents: []
                   },
                   {
-                    type: 'text',
-                    text: 'บาท',
-                    weight: 'bold',
-                    size: 'sm',
-                    flex: 0,
-                    align: 'end',
-                    wrap: true,
-                    contents: [],
-                  },
-                ],
-              },
-            ],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'เจ๊แดงปลานิลสด',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           footer: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
             contents: [
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ติดต่อร้านค้า',
-                  text: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
                 },
-                style: 'primary',
+                color: '#47E291FF',
+                style: 'primary'
               },
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ดูสินค้าอื่นในร้าน',
-                  text: 'ดูสินค้าอื่นในร้าน',
-                },
-              },
-            ],
-          },
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
         },
         {
           type: 'bubble',
-          header: {
-            type: 'box',
-            layout: 'vertical',
-            flex: 0,
-            backgroundColor: '#47E291FF',
-            contents: [
-              {
-                type: 'text',
-                text: 'ติ๊กช้อป',
-                size: 'lg',
-                color: '#FFFBFBFF',
-                align: 'center',
-                contents: [],
-              },
-            ],
-          },
           hero: {
             type: 'image',
-            url:
-              'https://raw.githubusercontent.com/chadaporn29797/project2020/main/fish.jpg',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s1.jpg',
             size: 'full',
             aspectRatio: '20:13',
             aspectMode: 'cover',
@@ -722,102 +717,108 @@ module.exports = async function App(context) {
           body: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
+            spacing: 'md',
             contents: [
               {
                 type: 'text',
-                text: 'เก้าอี้สีขาว',
+                text: 'น้ำพริกตาแดงปลาทูแห้ง',
                 weight: 'bold',
                 size: 'xl',
-                wrap: true,
-                contents: [],
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    type: 'text',
-                    text: 'เก้าอี้วิเศษ นั่งแล้วจะล่องหนได้',
-                    color: '#636363FF',
-                    contents: [],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '79',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                contents: [
                   {
                     type: 'text',
-                    text: '265',
-                    weight: 'bold',
-                    size: 'xl',
-                    flex: 0,
+                    text: 'น้ำพริกตาแดงปลาทูแห้ง เจ้าเก่า ตำหรับดั้งเดิม อร่อยเด็ด',
+                    size: 'md',
+                    color: '#AAAAAA',
                     wrap: true,
-                    contents: [],
+                    contents: []
                   },
                   {
-                    type: 'text',
-                    text: 'บาท',
-                    weight: 'bold',
-                    size: 'sm',
-                    flex: 0,
-                    align: 'end',
-                    wrap: true,
-                    contents: [],
-                  },
-                ],
-              },
-            ],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'บอร์นบอร์นน้ำพริกอุบล',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           footer: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
             contents: [
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ติดต่อร้านค้า',
-                  text: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
                 },
-                style: 'primary',
+                color: '#47E291FF',
+                style: 'primary'
               },
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ดูสินค้าอื่นในร้าน',
-                  text: 'ดูสินค้าอื่นในร้าน',
-                },
-              },
-            ],
-          },
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
         },
         {
           type: 'bubble',
-          header: {
-            type: 'box',
-            layout: 'vertical',
-            flex: 0,
-            backgroundColor: '#47E291FF',
-            contents: [
-              {
-                type: 'text',
-                text: 'ติ๊กช้อป',
-                size: 'lg',
-                color: '#FFFBFBFF',
-                align: 'center',
-                contents: [],
-              },
-            ],
-          },
           hero: {
             type: 'image',
-            url:
-              'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s2.jpg',
             size: 'full',
             aspectRatio: '20:13',
             aspectMode: 'cover',
@@ -825,79 +826,102 @@ module.exports = async function App(context) {
           body: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
+            spacing: 'md',
             contents: [
               {
                 type: 'text',
-                text: 'เก้าอี้สีขาว',
+                text: 'บราวนี่โฮมเมด',
                 weight: 'bold',
                 size: 'xl',
-                wrap: true,
-                contents: [],
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    type: 'text',
-                    text: 'เก้าอี้วิเศษ นั่งแล้วจะล่องหนได้',
-                    color: '#636363FF',
-                    contents: [],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '150',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                contents: [
                   {
                     type: 'text',
-                    text: '265',
-                    weight: 'bold',
-                    size: 'xl',
-                    flex: 0,
+                    text: 'บราวนี่โฮมเมด เนื้อฟัดจ์หนึบ อร่อยจากช้อคโกแลตนำเข้าความเข้มข้นสูง',
+                    size: 'md',
+                    color: '#AAAAAA',
                     wrap: true,
-                    contents: [],
+                    contents: []
                   },
                   {
-                    type: 'text',
-                    text: 'บาท',
-                    weight: 'bold',
-                    size: 'sm',
-                    flex: 0,
-                    align: 'end',
-                    wrap: true,
-                    contents: [],
-                  },
-                ],
-              },
-            ],
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'หมิวเบเกอรี่',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           footer: {
             type: 'box',
             layout: 'vertical',
-            spacing: 'sm',
             contents: [
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ติดต่อร้านค้า',
-                  text: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
                 },
-                style: 'primary',
+                color: '#47E291FF',
+                style: 'primary'
               },
               {
                 type: 'button',
                 action: {
                   type: 'message',
                   label: 'ดูสินค้าอื่นในร้าน',
-                  text: 'ดูสินค้าอื่นในร้าน',
-                },
-              },
-            ],
-          },
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
         },
         {
           type: 'bubble',
@@ -958,7 +982,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/id-card.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/id-card.png',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -1016,7 +1040,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/google-maps.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/google-maps.png',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -1074,7 +1098,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/telephone.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/telephone.png',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -1132,7 +1156,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/line.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/line.png',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -1190,7 +1214,7 @@ module.exports = async function App(context) {
                   {
                     type: 'image',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/facebook.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/facebook.png',
                     aspectMode: 'cover',
                     size: 'full',
                   },
@@ -1379,7 +1403,7 @@ module.exports = async function App(context) {
                     type: 'icon',
                     size: 'lg',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/pencil%20(1).png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
                   
                 ],
@@ -1402,7 +1426,7 @@ module.exports = async function App(context) {
                     size: 'lg',
                     aspectRatio: '1:1',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/garbage.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
                   },
                 ],
               },
@@ -1586,7 +1610,10 @@ module.exports = async function App(context) {
       longitude: 104.3300335
   });
 
-
+  } else if (context.event.text === 'null') {
+    await context.sendText(
+      'ยินดีต้อนรับสู่ไลน์บอท บายมั้ย นะครับ'
+    );
   } else if (context.event.text === 'วิธีลงขายสินค้า') {
     await context.sendText(
       '1. กดปุ่ม "ตั้งค่าร้านค้า" ก่อนนะครับ จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ หากข้อมูลเพียงพอก็จะสามารถ เพิ่มสินค้าได้ '
