@@ -18,6 +18,12 @@ module.exports = async function App(context) {
   } else if (context.event.text === 'บริจาค') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_6_ID);
 
+  } else if (context.event.text === 'แอดมิน') {
+    await context.linkRichMenu(process.env.SUB_RICH_MENU_7_ID);
+
+  } else if (context.event.text === 'ออกจากระบบ') {
+    await context.linkRichMenu(process.env.MAIN_RICH_MENU_ID);
+
     ///////////// เมนูลงขายสินค้า /////////////////
 
   } else if (context.event.text === 'เพิ่มสินค้า') {
@@ -2897,6 +2903,18 @@ module.exports = async function App(context) {
   } else if (context.event.text === 'null') {
     await context.sendText(
       'ยินดีต้อนรับสู่ไลน์บอท บายมั้ย นะครับ'
+    );
+
+
+  ////////////////////////// แอดมิน /////////////////////////
+  } else if (context.event.text === 'ดูสินค้าที่เพิ่มมาใหม่') {
+    await context.sendText(
+      'i try so hard and got so far'
+    );
+  
+  } else if (context.event.text === 'ดูรายการบริจาค') {
+    await context.sendText(
+      'But in the end, it doesnt even matter'
     );
   
   } else if (context.event.text === 'กลับ') {
