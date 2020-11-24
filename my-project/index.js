@@ -1,8 +1,6 @@
 /* eslint-disable prettier/prettier */
 // module.exports = require('./src');
 // eslint-disable-next-line no-unused-vars
-// const test = require('./test')
-// const test2 = JSON.stringify(test);
 
 module.exports = async function App(context) {
   if (context.event.text === 'ลงขายสินค้า') {
@@ -17,11 +15,163 @@ module.exports = async function App(context) {
   } else if (context.event.text === 'หมวดหมู่สินค้า') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_5_ID);
   
-  // } else if (context.event.text === 'หมวดหมู่สินค้า') {
-  //   await context.sendFlex('This is an advanced flex',  test );
-    
   } else if (context.event.text === 'บริจาค') {
     await context.linkRichMenu(process.env.SUB_RICH_MENU_6_ID);
+
+    ///////////// เมนูลงขายสินค้า /////////////////
+
+  } else if (context.event.text === 'เพิ่มสินค้า') {
+    await context.sendFlex('This is an advanced flex', {
+      type: 'bubble',
+      direction: 'ltr',
+      body: {
+        type: 'box',
+        layout: 'vertical',
+        contents: [
+          {
+            type: 'box',
+            layout: 'baseline',
+            contents: [
+              {
+                type: 'text',
+                text: '+ เปลี่ยนรูปภาพ',
+                color: '#9F9898FF',
+                contents: []
+              },
+              {
+                type: 'icon',
+                size: 'lg',
+                url:
+                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+              },
+            ]
+          },
+          {
+            type: 'image',
+            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png',
+            size: 'full',
+            backgroundColor: '#FFFFFFFF'
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: 'ชื่อสินค้า',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่ชื่อของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: 'รายละเอียด',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่รายละเอียดของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: 'ราคา',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่ราคาของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                  },
+                ]
+              },
+            ]
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: 'หมวดหมู่',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'baseline',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่หมวดหมู่ของสินค้า',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                  },
+                ]
+              },
+              
+            ]
+          }
+        ]
+      }
+    });
 
   } else if (context.event.text === 'สินค้าของฉัน') {
     await context.sendFlex('This is an advanced flex', {
@@ -331,158 +481,363 @@ module.exports = async function App(context) {
         },
       },
     });
-  } else if (context.event.text === 'เพิ่มสินค้า') {
+
+  } else if (context.event.text === 'ตั้งค่าร้านค้า') {
     await context.sendFlex('This is an advanced flex', {
       type: 'bubble',
+      size: 'mega',
       direction: 'ltr',
+      header: {
+        type: 'box',
+        layout: 'vertical',
+        backgroundColor: '#47E291FF',
+        contents: [
+          {
+            type: 'text',
+            text: 'ข้อมูลร้านค้า',
+            weight: 'bold',
+            size: 'lg',
+            color: '#FFFFFFFF',
+            align: 'center',
+            contents: [],
+          },
+        ],
+      },
       body: {
         type: 'box',
         layout: 'vertical',
         contents: [
           {
             type: 'box',
-            layout: 'baseline',
+            layout: 'horizontal',
             contents: [
               {
-                type: 'text',
-                text: '+ เปลี่ยนรูปภาพ',
-                color: '#9F9898FF',
-                contents: []
-              },
-              {
-                type: 'icon',
-                size: 'lg',
-                url:
-                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
-              },
-            ]
-          },
-          {
-            type: 'image',
-            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png',
-            size: 'full',
-            backgroundColor: '#FFFFFFFF'
-          },
-          {
-            type: 'box',
-            layout: 'vertical',
-            contents: [
-              {
-                type: 'text',
-                text: 'ชื่อสินค้า',
-                contents: []
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'image',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/id-card.png',
+                    aspectMode: 'cover',
+                    size: 'full',
+                  },
+                ],
+                // cornerRadius: '100px',
+                width: '40px',
+                height: '40px',
               },
               {
                 type: 'box',
-                layout: 'baseline',
+                layout: 'vertical',
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่ชื่อของสินค้า',
-                    color: '#9F9898FF',
-                    contents: []
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'ชื่อร้านค้า',
+                        weight: 'bold',
+                        color: '#000000',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'เจ๊แดงปลานิลสด',
+                        color: '#928585FF',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
-                ]
+                ],
               },
-            ]
+            ],
+            spacing: 'xl',
+            paddingAll: '15px',
+          },
+          {
+            type: 'separator',
           },
           {
             type: 'box',
-            layout: 'vertical',
+            layout: 'horizontal',
             contents: [
               {
-                type: 'text',
-                text: 'รายละเอียด',
-                contents: []
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'image',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/google-maps.png',
+                    aspectMode: 'cover',
+                    size: 'full',
+                  },
+                ],
+                // cornerRadius: '100px',
+                width: '40px',
+                height: '40px',
               },
               {
                 type: 'box',
-                layout: 'baseline',
+                layout: 'vertical',
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่รายละเอียดของสินค้า',
-                    color: '#9F9898FF',
-                    contents: []
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'ที่ตั้งร้านค้า',
+                        weight: 'bold',
+                        color: '#000000',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'ศรีสะเกษ',
+                        color: '#928585FF',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
-                ]
+                ],
               },
-            ]
+            ],
+            spacing: 'xl',
+            paddingAll: '15px',
+          },
+          {
+            type: 'separator',
           },
           {
             type: 'box',
-            layout: 'vertical',
+            layout: 'horizontal',
             contents: [
               {
-                type: 'text',
-                text: 'ราคา',
-                contents: []
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'image',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/telephone.png',
+                    aspectMode: 'cover',
+                    size: 'full',
+                  },
+                ],
+                // cornerRadius: '100px',
+                width: '40px',
+                height: '40px',
               },
               {
                 type: 'box',
-                layout: 'baseline',
+                layout: 'vertical',
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่ราคาของสินค้า',
-                    color: '#9F9898FF',
-                    contents: []
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'เบอร์โทรศัพท์',
+                        weight: 'bold',
+                        color: '#000000',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: '0848346449',
+                        color: '#928585FF',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
-                ]
+                ],
               },
-            ]
+            ],
+            spacing: 'xl',
+            paddingAll: '15px',
+          },
+          {
+            type: 'separator',
           },
           {
             type: 'box',
-            layout: 'vertical',
+            layout: 'horizontal',
             contents: [
               {
-                type: 'text',
-                text: 'หมวดหมู่',
-                contents: []
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'image',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/line.png',
+                    aspectMode: 'cover',
+                    size: 'full',
+                  },
+                ],
+                // cornerRadius: '100px',
+                width: '40px',
+                height: '40px',
               },
               {
                 type: 'box',
-                layout: 'baseline',
+                layout: 'vertical',
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่หมวดหมู่ของสินค้า',
-                    color: '#9F9898FF',
-                    contents: []
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'LINE',
+                        weight: 'bold',
+                        color: '#000000',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'plasodbyjedang',
+                        color: '#928585FF',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
                   },
-                ]
+                ],
               },
-              
-            ]
-          }
-        ]
-      }
+            ],
+            spacing: 'xl',
+            paddingAll: '15px',
+          },
+          {
+            type: 'separator',
+          },
+          {
+            type: 'box',
+            layout: 'horizontal',
+            contents: [
+              {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'image',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/facebook.png',
+                    aspectMode: 'cover',
+                    size: 'full',
+                  },
+                ],
+                // cornerRadius: '100px',
+                width: '40px',
+                height: '40px',
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                contents: [
+                  {
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: 'Facebook',
+                        weight: 'bold',
+                        color: '#000000',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
+                  },
+                  {
+                    type: 'text',
+                    contents: [
+                      {
+                        type: 'span',
+                        text: '/เจ๊แดงปลานิลสด',
+                        color: '#928585FF',
+                      },
+                    ],
+                    size: 'md',
+                    wrap: true,
+                  },
+                ],
+              },
+            ],
+            spacing: 'xl',
+            paddingAll: '15px',
+          },
+        ],
+        paddingAll: '0px',
+      },
+      
+      footer: {
+        type: 'box',
+        layout: 'horizontal',
+        backgroundColor: '#47E291FF',
+        contents: [
+          {
+            type: 'button',
+            action: {
+              type: 'message',
+              label: 'เพิ่มสินค้า',
+              text: 'เพิ่มสินค้า',
+            },
+            color: '#FFFFFFFF',
+            gravity: 'center',
+          },
+        ],
+      },
+      styles: {
+        header: {
+          backgroundColor: '#47E291FF',
+          separatorColor: '#161313FF',
+        },
+      },
     });
+
+  } else if (context.event.text === 'วิธีลงขายสินค้า') {
+    await context.sendText(
+      '1. กดปุ่ม "ตั้งค่าร้านค้า" ก่อนนะครับ จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ หากข้อมูลเพียงพอก็จะสามารถ เพิ่มสินค้าได้ '
+    );
+    await context.sendText(
+      '2. กดปุ่ม "เพิ่มสินค้า" จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ'
+    );
+    await context.sendText(
+      '3. สามารถดูรายการสินค้า และแก้ไขหรือลบสินค้าได้ โดยกดปุ่ม "สินค้าของฉัน" คาบบบ'
+    );
+    await context.sendText(
+      '** หากพบเจอการโพสต์สินค้าที่ไม่สมควร จะขออนุญาตลบสินค้า และตัดสิทธิ์การใช้งาน บายมั้ย นะงับ'
+    );
+
+  //////////////////// เมนูรายการสินค้า ////////////////////////
   } else if (context.event.text === 'รายการสินค้าแนะนำ') {
     await context.sendFlex('This is an advanced flex', {
       type: 'carousel',
@@ -945,604 +1300,1533 @@ module.exports = async function App(context) {
         },
       ],
     });
-    
-  } else if (context.event.text === 'ตั้งค่าร้านค้า') {
-    await context.sendFlex('This is an advanced flex', {
-      type: 'bubble',
-      size: 'mega',
-      direction: 'ltr',
-      header: {
-        type: 'box',
-        layout: 'vertical',
-        backgroundColor: '#47E291FF',
-        contents: [
-          {
-            type: 'text',
-            text: 'ข้อมูลร้านค้า',
-            weight: 'bold',
-            size: 'lg',
-            color: '#FFFFFFFF',
-            align: 'center',
-            contents: [],
-          },
-        ],
-      },
-      body: {
-        type: 'box',
-        layout: 'vertical',
-        contents: [
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/id-card.png',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                // cornerRadius: '100px',
-                width: '40px',
-                height: '40px',
-              },
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ชื่อร้านค้า',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'เจ๊แดงปลานิลสด',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                ],
-              },
-            ],
-            spacing: 'xl',
-            paddingAll: '15px',
-          },
-          {
-            type: 'separator',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/google-maps.png',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                // cornerRadius: '100px',
-                width: '40px',
-                height: '40px',
-              },
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ที่ตั้งร้านค้า',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ศรีสะเกษ',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                ],
-              },
-            ],
-            spacing: 'xl',
-            paddingAll: '15px',
-          },
-          {
-            type: 'separator',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/telephone.png',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                // cornerRadius: '100px',
-                width: '40px',
-                height: '40px',
-              },
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'เบอร์โทรศัพท์',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: '0848346449',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                ],
-              },
-            ],
-            spacing: 'xl',
-            paddingAll: '15px',
-          },
-          {
-            type: 'separator',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/line.png',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                // cornerRadius: '100px',
-                width: '40px',
-                height: '40px',
-              },
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'LINE',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'plasodbyjedang',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                ],
-              },
-            ],
-            spacing: 'xl',
-            paddingAll: '15px',
-          },
-          {
-            type: 'separator',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/facebook.png',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                // cornerRadius: '100px',
-                width: '40px',
-                height: '40px',
-              },
-              {
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'Facebook',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                  {
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: '/เจ๊แดงปลานิลสด',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'md',
-                    wrap: true,
-                  },
-                ],
-              },
-            ],
-            spacing: 'xl',
-            paddingAll: '15px',
-          },
-        ],
-        paddingAll: '0px',
-      },
-      
-      footer: {
-        type: 'box',
-        layout: 'horizontal',
-        backgroundColor: '#47E291FF',
-        contents: [
-          {
-            type: 'button',
-            action: {
-              type: 'message',
-              label: 'เพิ่มสินค้า',
-              text: 'เพิ่มสินค้า',
-            },
-            color: '#FFFFFFFF',
-            gravity: 'center',
-          },
-        ],
-      },
-      styles: {
-        header: {
-          backgroundColor: '#47E291FF',
-          separatorColor: '#161313FF',
-        },
-      },
-    });
 
-  } else if (context.event.text === 'ดูรายการ') {
+  } else if (context.event.text === 'สินค้าใกล้ตัว') {
+    await context.sendText(
+      'คุณอยู่จังหวัด อุบลราชธานี นี่คือสินค้าที่อยู่ใกล้คุณ'
+    );
     await context.sendFlex('This is an advanced flex', {
-      type: 'bubble',
-      size: 'mega',
-      direction: 'ltr',
-      header: {
-        type: 'box',
-        layout: 'vertical',
-        backgroundColor: '#47E291FF',
-        contents: [
-          {
-            type: 'text',
-            text: 'ดูรายการ',
-            weight: 'bold',
-            size: 'lg',
-            color: '#FFFFFFFF',
-            align: 'center',
-            contents: [],
+      type: 'carousel',
+      contents: [
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s1.jpg',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
           },
-        ],
-      },
-      body: {
-        type: 'box',
-        layout: 'vertical',
-        contents: [
-          {
-            //box1
+          body: {
             type: 'box',
-            layout: 'horizontal',
+            layout: 'vertical',
+            spacing: 'md',
             contents: [
               {
-                //box2
-                type: 'box',
-                layout: 'vertical',
-                contents: [
-                  {
-                    type: 'image',
-                    url:
-                      'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip13.jpg',
-                    aspectMode: 'cover',
-                    size: 'full',
-                  },
-                ],
-                cornerRadius: '100px',
-                width: '72px',
-                height: '72px',
+                type: 'text',
+                text: 'น้ำพริกตาแดงปลาทูแห้ง',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
               },
               {
-                //box3
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    //text1
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ปลานิล',
-                        weight: 'bold',
-                        color: '#000000',
-                      },
-                    ],
-                    size: 'lg',
-                    wrap: true,
-                  },
-                  {
-                    //text2
-                    type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ปลานิลสดร้านเจ๊แดง ราคาถูก',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'sm',
-                    wrap: true,
-                  },
-                  {
-                    //text3
                     type: 'box',
                     layout: 'baseline',
                     contents: [
                       {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
                         type: 'text',
-                        text: '70 บาท',
+                        text: '79',
                         weight: 'bold',
                         size: 'lg',
-                        color: '#2C8921FF',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
                       },
-                    ],
-                    // spacing: 'sm',
-                    // margin: 'md',
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
-                
+                  {
+                    type: 'text',
+                    text: 'น้ำพริกตาแดงปลาทูแห้ง เจ้าเก่า ตำหรับดั้งเดิม อร่อยเด็ด',
+                    size: 'md',
+                    color: '#AAAAAA',
+                    wrap: true,
+                    contents: []
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'บอร์นบอร์นน้ำพริกอุบล',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
               },
-              
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s2.jpg',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'md',
+            contents: [
+              {
+                type: 'text',
+                text: 'บราวนี่โฮมเมด',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '150',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
+                  },
+                  {
+                    type: 'text',
+                    text: 'บราวนี่โฮมเมด เนื้อฟัดจ์หนึบ อร่อยจากช้อคโกแลตนำเข้าความเข้มข้นสูง',
+                    size: 'md',
+                    color: '#AAAAAA',
+                    wrap: true,
+                    contents: []
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'หมิวเบเกอรี่',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'sm',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'uri',
+                  label: 'See more',
+                  uri: 'https://linecorp.com',
+                },
+                flex: 1,
+                gravity: 'center',
+              },
             ],
-            spacing: 'xl',
-            paddingAll: '20px',
+          },
+        },
+      ],
+    });
+
+  } else if (context.event.text === 'รายการโปรด') {
+    await context.sendText(
+      'นี่คือสินค้าที่คุณเลือกเป็นรายการโปรด'
+    );
+    await context.sendFlex('This is an advanced flex', {
+      type: 'carousel',
+      contents: [
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s1.jpg',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'md',
+            contents: [
+              {
+                type: 'text',
+                text: 'น้ำพริกตาแดงปลาทูแห้ง',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '79',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
+                  },
+                  {
+                    type: 'text',
+                    text: 'น้ำพริกตาแดงปลาทูแห้ง เจ้าเก่า ตำหรับดั้งเดิม อร่อยเด็ด',
+                    size: 'md',
+                    color: '#AAAAAA',
+                    wrap: true,
+                    contents: []
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'บอร์นบอร์นน้ำพริกอุบล',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s2.jpg',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'md',
+            contents: [
+              {
+                type: 'text',
+                text: 'บราวนี่โฮมเมด',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '150',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
+                  },
+                  {
+                    type: 'text',
+                    text: 'บราวนี่โฮมเมด เนื้อฟัดจ์หนึบ อร่อยจากช้อคโกแลตนำเข้าความเข้มข้นสูง',
+                    size: 'md',
+                    color: '#AAAAAA',
+                    wrap: true,
+                    contents: []
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'หมิวเบเกอรี่',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'sm',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'uri',
+                  label: 'See more',
+                  uri: 'https://linecorp.com',
+                },
+                flex: 1,
+                gravity: 'center',
+              },
+            ],
+          },
+        },
+      ],
+    });
+    
+  //////////////////// เมนูบริจาค /////////////////////////
+
+} else if (context.event.text === 'ดูรายการ') {
+  await context.sendFlex('This is an advanced flex', {
+    type: 'carousel',
+    contents: [
+      {
+        type: 'bubble',
+        hero: {
+          type: 'image',
+          url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s3.PNG',
+          size: 'full',
+          aspectRatio: '20:13',
+          aspectMode: 'cover',
+        },
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          spacing: 'md',
+          contents: [
+            {
+              type: 'text',
+              text: 'เสื้อผ้าผู้หญิง',
+              weight: 'bold',
+              size: 'xl',
+              contents: []
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              spacing: 'sm',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/delivery-man.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'ไม่ต้องออกค่าส่ง',
+                      weight: 'bold',
+                      size: 'lg',
+                      color: '#02970EFF',
+                      margin: 'md',
+                      contents: []
+                    },
+                    
+                  ]
+                },
+                {
+                  type: 'text',
+                  text: 'เสื้อผ้าผู้หญิง ไม่ใช้แล้วค่ะ หาคนที่ใส่ไซส์ s และรับสภาพได้ ทักมานะคะ',
+                  size: 'md',
+                  color: '#AAAAAA',
+                  wrap: true,
+                  contents: []
+                },
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/account.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'เบนซ์ศรี',
+                      weight: 'bold',
+                      flex: 0,
+                      margin: 'md',
+                      contents: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        footer: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'message',
+                label: 'ติดต่อ',
+                text: 'ติดต่อ'
+              },
+              color: '#47E291FF',
+              style: 'primary'
+            },
+            
+          ]
+        }
+      },
+      {
+        type: 'bubble',
+        hero: {
+          type: 'image',
+          url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s4.jpg',
+          size: 'full',
+          aspectRatio: '20:13',
+          aspectMode: 'cover',
+        },
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          spacing: 'md',
+          contents: [
+            {
+              type: 'text',
+              text: 'หนังสือนิยายแจ่มใส',
+              weight: 'bold',
+              size: 'xl',
+              contents: []
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              spacing: 'sm',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/delivery-man.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'ไม่ต้องออกค่าส่ง',
+                      weight: 'bold',
+                      size: 'lg',
+                      color: '#02970EFF',
+                      margin: 'md',
+                      contents: []
+                    },
+                    
+                  ]
+                },
+                {
+                  type: 'text',
+                  text: 'หนังสือนิยายแจ่มใส ให้คนละหนึ่งเรื่องนะคะ ใครสนใจทักแชทเลยนะคะ',
+                  size: 'md',
+                  color: '#AAAAAA',
+                  wrap: true,
+                  contents: []
+                },
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/account.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'แพรศรี',
+                      weight: 'bold',
+                      flex: 0,
+                      margin: 'md',
+                      contents: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        footer: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'message',
+                label: 'ติดต่อ',
+                text: 'ติดต่อ'
+              },
+              color: '#47E291FF',
+              style: 'primary'
+            },
+            
+          ]
+        }
+      },
+      {
+        type: 'bubble',
+        hero: {
+          type: 'image',
+          url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s5.jpg',
+          size: 'full',
+          aspectRatio: '20:13',
+          aspectMode: 'cover',
+        },
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          spacing: 'md',
+          contents: [
+            {
+              type: 'text',
+              text: 'ต้นตะบองเพชร น่ารักมากๆ',
+              weight: 'bold',
+              size: 'xl',
+              contents: []
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              spacing: 'sm',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/delivery-man.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'ออกค่าส่ง',
+                      weight: 'bold',
+                      size: 'lg',
+                      color: '#02970EFF',
+                      margin: 'md',
+                      contents: []
+                    },
+                    
+                  ]
+                },
+                {
+                  type: 'text',
+                  text: 'หาบ้านให้น้องตะบองเพชรค่าาา น้องน่ารักมาก',
+                  size: 'md',
+                  color: '#AAAAAA',
+                  wrap: true,
+                  contents: []
+                },
+                {
+                  type: 'box',
+                  layout: 'baseline',
+                  contents: [
+                    {
+                      type: 'icon',
+                      url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/account.png'
+                    },
+                    {
+                      type: 'text',
+                      text: 'เกดจ๋าได้ยิมไหมว่าเสียงใคร',
+                      weight: 'bold',
+                      flex: 0,
+                      margin: 'md',
+                      contents: []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        footer: {
+          type: 'box',
+          layout: 'vertical',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'message',
+                label: 'ติดต่อ',
+                text: 'ติดต่อ'
+              },
+              color: '#47E291FF',
+              style: 'primary'
+            },
+            
+          ]
+        }
+      },
+      
+      {
+        type: 'bubble',
+        body: {
+          type: 'box',
+          layout: 'vertical',
+          spacing: 'sm',
+          contents: [
+            {
+              type: 'button',
+              action: {
+                type: 'uri',
+                label: 'See more',
+                uri: 'https://linecorp.com',
+              },
+              flex: 1,
+              gravity: 'center',
+            },
+          ],
+        },
+      },
+    ],
+  });
+
+  } else if (context.event.text === 'โพสต์') {
+    await context.sendFlex('This is an advanced flex', {
+      type: 'bubble',
+      direction: 'ltr',
+      body: {
+        type: 'box',
+        layout: 'vertical',
+        contents: [
+          {
+            type: 'box',
+            layout: 'baseline',
+            contents: [
+              {
+                type: 'text',
+                text: '+ เปลี่ยนรูปภาพ',
+                color: '#9F9898FF',
+                contents: []
+              },
+              {
+                type: 'icon',
+                size: 'lg',
+                url:
+                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+              },
+            ]
+          },
+          {
+            type: 'image',
+            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png',
+            size: 'full',
+            backgroundColor: '#FFFFFFFF'
           },
           {
             type: 'box',
-            layout: 'horizontal',
+            layout: 'vertical',
             contents: [
+              {
+                type: 'text',
+                text: 'ชื่อสิ่งของ',
+                contents: []
+              },
               {
                 type: 'box',
                 layout: 'baseline',
-                margin: 'md',
                 contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่ชื่อสิ่งของ',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
                   {
                     type: 'icon',
                     size: 'lg',
                     url:
                       'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
-                  
-                ],
+                ]
               },
+            ]
+          },
+          {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
               {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'แก้ไข',
-                  text: 'แก้ไข'
-                }
+                type: 'text',
+                text: 'รายละเอียด',
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'baseline',
-                margin: 'md',
                 contents: [
+                  {
+                    type: 'text',
+                    text: '+ ใส่รายละเอียดของรายการ',
+                    color: '#9F9898FF',
+                    contents: []
+                  },
                   {
                     type: 'icon',
                     size: 'lg',
-                    aspectRatio: '1:1',
                     url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
                   },
-                ],
+                ]
               },
-              {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'ลบ',
-                  text: 'ลบ'
-                }
-              },
-            ],
-            // spacing: 'xl',
-            // paddingAll: '5px',
-          },
-          {
-            type: 'separator',
+            ]
           },
           {
             type: 'box',
-            layout: 'horizontal',
+            layout: 'vertical',
             contents: [
               {
+                type: 'text',
+                text: 'ค่าส่ง',
+                contents: []
+              },
+              {
                 type: 'box',
-                layout: 'vertical',
+                layout: 'baseline',
                 contents: [
                   {
-                    type: 'image',
-                    url:
-                      'https://scdn.line-apps.com/n/channel_devcenter/img/flexsnapshot/clip/clip13.jpg',
-                    aspectMode: 'cover',
-                    size: 'full',
+                    type: 'text',
+                    text: '+ ต้องการให้ออกค่าส่งหรือไม่',
+                    color: '#9F9898FF',
+                    contents: []
                   },
-                ],
-                cornerRadius: '100px',
-                width: '72px',
-                height: '72px',
+                  {
+                    type: 'icon',
+                    size: 'lg',
+                    url:
+                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                  },
+                ]
+              },
+              
+            ]
+          }
+        ]
+      }
+    });
+
+  ////////////// เมนูค้นหาสินค้า ////////////////////////
+
+  } else if (context.event.text === 'รายการค้นหาล่าสุด') {
+    await context.sendText(
+      'การค้นหาล่าสุดของคุณคือ  น้ำพริก'
+    );
+    await context.sendFlex('This is an advanced flex', {
+      type: 'carousel',
+      contents: [
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s6.PNG',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'md',
+            contents: [
+              {
+                type: 'text',
+                text: 'น้ำพริกหมูกระจก',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
               },
               {
                 type: 'box',
                 layout: 'vertical',
+                spacing: 'sm',
                 contents: [
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
-                        text: 'ปลานิล',
-                        weight: 'bold',
-                        color: '#000000',
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
                       },
-                    ],
-                    size: 'lg',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: '69',
+                        weight: 'bold',
+                        size: 'lg',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
                   {
                     type: 'text',
-                    contents: [
-                      {
-                        type: 'span',
-                        text: 'ปลานิลสดร้านเจ๊แดง ราคาถูก',
-                        color: '#928585FF',
-                      },
-                    ],
-                    size: 'sm',
+                    text: '👩🏻‍🍳👨🏻‍🍳ทำสดใหม่ทุกวันนะคะ กรอบอร่อย ไม่เหม็นหืน',
+                    size: 'md',
+                    color: '#AAAAAA',
                     wrap: true,
+                    contents: []
                   },
                   {
                     type: 'box',
                     layout: 'baseline',
                     contents: [
                       {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
                         type: 'text',
-                        text: '70 บาท',
+                        text: 'ปัดอ้วนเจ้าแม่น้ำพริก',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          hero: {
+            type: 'image',
+            url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/s1.jpg',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover',
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'md',
+            contents: [
+              {
+                type: 'text',
+                text: 'น้ำพริกตาแดงปลาทูแห้ง',
+                weight: 'bold',
+                size: 'xl',
+                contents: []
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/baht.png'
+                      },
+                      {
+                        type: 'text',
+                        text: '79',
                         weight: 'bold',
                         size: 'lg',
-                        color: '#2C8921FF',
+                        color: '#02970EFF',
+                        margin: 'md',
+                        contents: []
                       },
-                    ],
-                    spacing: 'sm',
-                    margin: 'md',
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'md',
+                        color: '#AAAAAA',
+                        align: 'end',
+                        contents: []
+                      }
+                    ]
                   },
-                ],
+                  {
+                    type: 'text',
+                    text: 'น้ำพริกตาแดงปลาทูแห้ง เจ้าเก่า ตำหรับดั้งเดิม อร่อยเด็ด',
+                    size: 'md',
+                    color: '#AAAAAA',
+                    wrap: true,
+                    contents: []
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'icon',
+                        url: 'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/store.png'
+                      },
+                      {
+                        type: 'text',
+                        text: 'บอร์นบอร์นน้ำพริกอุบล',
+                        weight: 'bold',
+                        flex: 0,
+                        margin: 'md',
+                        contents: []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ติดต่อร้านค้า',
+                  text: 'ติดต่อร้านค้า'
+                },
+                color: '#47E291FF',
+                style: 'primary'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'message',
+                  label: 'ดูสินค้าอื่นในร้าน',
+                  text: 'ดูสินค้าอื่นในร้าน'
+                }
+              }
+            ]
+          }
+        },
+        {
+          type: 'bubble',
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'sm',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'uri',
+                  label: 'See more',
+                  uri: 'https://linecorp.com',
+                },
+                flex: 1,
+                gravity: 'center',
               },
             ],
-            spacing: 'xl',
-            paddingAll: '20px',
           },
-          
-        ],
-        paddingAll: '0px',
-      },
-      footer: {
-        type: 'box',
-        layout: 'horizontal',
-        backgroundColor: '#47E291FF',
-        contents: [
-          {
-            type: 'button',
-            action: {
-              type: 'message',
-              label: 'เพิ่มสินค้า',
-              text: 'เพิ่มสินค้า',
-            },
-            color: '#FFFFFFFF',
-            gravity: 'center',
-          },
-        ],
-      },
-      styles: {
-        header: {
-          backgroundColor: '#47E291FF',
-          separatorColor: '#161313FF',
         },
-      },
+      ],
     });
+
+  /////////////////// เมนูข้อมูลส่วนตัว ////////////////////////
+
+} else if (context.event.text === 'ข้อมูลส่วนตัว') {
+  await context.sendFlex('This is an advanced flex', {
+    type: 'bubble',
+    size: 'mega',
+    direction: 'ltr',
+    header: {
+      type: 'box',
+      layout: 'vertical',
+      backgroundColor: '#47E291FF',
+      contents: [
+        {
+          type: 'text',
+          text: 'ข้อมูลส่วนตัว',
+          weight: 'bold',
+          size: 'lg',
+          color: '#FFFFFFFF',
+          align: 'center',
+          contents: [],
+        },
+      ],
+    },
+    body: {
+      type: 'box',
+      layout: 'vertical',
+      contents: [
+        {
+          type: 'box',
+          layout: 'horizontal',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'image',
+                  url:
+                    'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/id-card.png',
+                  aspectMode: 'cover',
+                  size: 'full',
+                },
+              ],
+              // cornerRadius: '100px',
+              width: '40px',
+              height: '40px',
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'ชื่อของคุณ',
+                      weight: 'bold',
+                      color: '#000000',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'ตุ๊กติ๊ก',
+                      color: '#928585FF',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+              ],
+            },
+          ],
+          spacing: 'xl',
+          paddingAll: '15px',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          type: 'box',
+          layout: 'horizontal',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'image',
+                  url:
+                    'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/google-maps.png',
+                  aspectMode: 'cover',
+                  size: 'full',
+                },
+              ],
+              // cornerRadius: '100px',
+              width: '40px',
+              height: '40px',
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'จังหวัดที่คุณอยู่',
+                      weight: 'bold',
+                      color: '#000000',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'ศรีสะเกษ',
+                      color: '#928585FF',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+              ],
+            },
+          ],
+          spacing: 'xl',
+          paddingAll: '15px',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          type: 'box',
+          layout: 'horizontal',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'image',
+                  url:
+                    'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/telephone.png',
+                  aspectMode: 'cover',
+                  size: 'full',
+                },
+              ],
+              // cornerRadius: '100px',
+              width: '40px',
+              height: '40px',
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'เบอร์โทรศัพท์',
+                      weight: 'bold',
+                      color: '#000000',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: '0610291134',
+                      color: '#928585FF',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+              ],
+            },
+          ],
+          spacing: 'xl',
+          paddingAll: '15px',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          type: 'box',
+          layout: 'horizontal',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'image',
+                  url:
+                    'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/line.png',
+                  aspectMode: 'cover',
+                  size: 'full',
+                },
+              ],
+              // cornerRadius: '100px',
+              width: '40px',
+              height: '40px',
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'LINE',
+                      weight: 'bold',
+                      color: '#000000',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'tuktik5522',
+                      color: '#928585FF',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+              ],
+            },
+          ],
+          spacing: 'xl',
+          paddingAll: '15px',
+        },
+        {
+          type: 'separator',
+        },
+        {
+          type: 'box',
+          layout: 'horizontal',
+          contents: [
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'image',
+                  url:
+                    'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/facebook.png',
+                  aspectMode: 'cover',
+                  size: 'full',
+                },
+              ],
+              // cornerRadius: '100px',
+              width: '40px',
+              height: '40px',
+            },
+            {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: 'Facebook',
+                      weight: 'bold',
+                      color: '#000000',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+                {
+                  type: 'text',
+                  contents: [
+                    {
+                      type: 'span',
+                      text: '/tikker24',
+                      color: '#928585FF',
+                    },
+                  ],
+                  size: 'md',
+                  wrap: true,
+                },
+              ],
+            },
+          ],
+          spacing: 'xl',
+          paddingAll: '15px',
+        },
+      ],
+      paddingAll: '0px',
+    },
+    
+    footer: {
+      type: 'box',
+      layout: 'horizontal',
+      backgroundColor: '#47E291FF',
+      contents: [
+        {
+          type: 'button',
+          action: {
+            type: 'message',
+            label: 'เพิ่มสินค้า',
+            text: 'เพิ่มสินค้า',
+          },
+          color: '#FFFFFFFF',
+          gravity: 'center',
+        },
+      ],
+    },
+    styles: {
+      header: {
+        backgroundColor: '#47E291FF',
+        separatorColor: '#161313FF',
+      },
+    },
+  });
+
+  ////////////////////// อื่นๆ //////////////////////////////
 
   } else if (context.event.text === 'ติดต่อร้านค้า') {
   const imagemap = {
@@ -1614,19 +2898,7 @@ module.exports = async function App(context) {
     await context.sendText(
       'ยินดีต้อนรับสู่ไลน์บอท บายมั้ย นะครับ'
     );
-  } else if (context.event.text === 'วิธีลงขายสินค้า') {
-    await context.sendText(
-      '1. กดปุ่ม "ตั้งค่าร้านค้า" ก่อนนะครับ จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ หากข้อมูลเพียงพอก็จะสามารถ เพิ่มสินค้าได้ '
-    );
-    await context.sendText(
-      '2. กดปุ่ม "เพิ่มสินค้า" จะมีการ์ดขึ้นมา พร้อมกับข้อความระบุว่าให้ใส่ข้อมูลอะไรเป็นลำดับ'
-    );
-    await context.sendText(
-      '3. สามารถดูรายการสินค้า และแก้ไขหรือลบสินค้าได้ โดยกดปุ่ม "สินค้าของฉัน" คาบบบ'
-    );
-    await context.sendText(
-      '** หากพบเจอการโพสต์สินค้าที่ไม่สมควร จะขออนุญาตลบสินค้า และตัดสิทธิ์การใช้งาน บายมั้ย นะงับ'
-    );
+  
   } else if (context.event.text === 'กลับ') {
     await context.linkRichMenu(process.env.MAIN_RICH_MENU_ID);
   } else {
