@@ -27,6 +27,9 @@ module.exports = async function App(context) {
     ///////////// เมนูลงขายสินค้า /////////////////
 
   } else if (context.event.text === 'เพิ่มสินค้า') {
+    await context.sendText(
+      'กดคำว่าแก้ไข เพื่อใส่ข้อมูลสินค้า'
+    );
     await context.sendFlex('This is an advanced flex', {
       type: 'bubble',
       direction: 'ltr',
@@ -45,10 +48,17 @@ module.exports = async function App(context) {
                 contents: []
               },
               {
-                type: 'icon',
-                size: 'lg',
-                url:
-                  'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                type: 'text',
+                text: 'แก้ไข',
+                color: '#DB9B6AFF',
+                size: "sm",
+                align: "end",
+                action: {
+                  type: 'message',
+                  label: 'แก้ไข',
+                  text: 'แก้ไขรูปภาพ'
+                },
+                contents: []
               },
             ]
           },
@@ -76,13 +86,20 @@ module.exports = async function App(context) {
                     text: '+ ใส่ชื่อของสินค้า',
                     color: '#9F9898FF',
                     contents: []
+                  },{
+                    type: 'text',
+                    text: 'แก้ไข',
+                    color: '#DB9B6AFF',
+                    size: "sm",
+                    align: "end",
+                    action: {
+                      type: 'message',
+                      label: 'แก้ไข',
+                      text: 'แก้ไขชื่อสินค้า'
+                    },
+                    contents: []
                   },
-                  {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
-                  },
+                  
                 ]
               },
             ]
@@ -102,15 +119,22 @@ module.exports = async function App(context) {
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่รายละเอียดของสินค้า',
+                    text: '+ ใส่รายละเอียด',
                     color: '#9F9898FF',
                     contents: []
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    text: 'แก้ไข',
+                    color: '#DB9B6AFF',
+                    size: "sm",
+                    align: "end",
+                    action: {
+                      type: 'message',
+                      label: 'แก้ไข',
+                      text: 'แก้ไขรายละเอียด'
+                    },
+                    contents: []
                   },
                 ]
               },
@@ -136,10 +160,17 @@ module.exports = async function App(context) {
                     contents: []
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    text: 'แก้ไข',
+                    color: '#DB9B6AFF',
+                    size: "sm",
+                    align: "end",
+                    action: {
+                      type: 'message',
+                      label: 'แก้ไข',
+                      text: 'แก้ไขราคา'
+                    },
+                    contents: []
                   },
                 ]
               },
@@ -160,15 +191,22 @@ module.exports = async function App(context) {
                 contents: [
                   {
                     type: 'text',
-                    text: '+ ใส่หมวดหมู่ของสินค้า',
+                    text: '+ ใส่หมวดหมู่สินค้า',
                     color: '#9F9898FF',
                     contents: []
                   },
                   {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
+                    type: 'text',
+                    text: 'แก้ไข',
+                    color: '#DB9B6AFF',
+                    size: "sm",
+                    align: "end",
+                    action: {
+                      type: 'message',
+                      label: 'แก้ไข',
+                      text: 'แก้ไขหมวดหมู่'
+                    },
+                    contents: []
                   },
                 ]
               },
@@ -178,6 +216,41 @@ module.exports = async function App(context) {
         ]
       }
     });
+
+  /////----------แก้ไข เมื่อ เพิ่มสินค้า ----------/////
+  } else if (context.event.text === 'แก้ไขรูปภาพ') {
+    await context.sendText(
+      'กรุณาใส่รูปสินค้า'
+    );
+    await context.sendText(
+      'จะถ่ายรูปสินค้าส่งเข้ามาในไลน์ หรือเลือกจากแกลอรี่ก็ได้นะครับ'
+    );
+  } else if (context.event.text === 'แก้ไขชื่อสินค้า') {
+    await context.sendText(
+      'กรุณาใส่ชื่อสินค้า'
+    );
+  } else if (context.event.text === 'แก้ไขราคา') {
+    await context.sendText(
+      'กรุณาใส่ราคาสินค้า เป็นตัวเลข ไม่ต้องเติมบาทนะครับ'
+    );
+  } else if (context.event.text === 'แก้ไขรายละเอียด') {
+    await context.sendText(
+      'กรุณาใส่รายละเอียดสินค้า '
+    );
+  } else if (context.event.text === 'แก้ไขหมวดหมู่') {
+    await context.sendText(
+      `กรุณาใส่หมวดหมู่สินค้าตามนี้
+      “อาหาร” 
+      “เครื่องใช้ไฟฟ้า” 
+      “เครื่องแต่งกาย” 
+      “บ้านและสวน”
+      “สุขภาพและความงาม”
+      “เครื่องดนตรี”
+      “สัตว์เลี้ยง”
+      “กีฬา”
+      “อื่นๆ”
+    กรุณาใส่ให้ถูกต้องเพื่อช่วยให้การค้นหาสินค้าง่ายขึ้นนะครับ `
+    );
 
   } else if (context.event.text === 'สินค้าของฉัน') {
     await context.sendFlex('This is an advanced flex', {
@@ -259,80 +332,61 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    //text3
                     type: 'box',
                     layout: 'baseline',
                     contents: [
                       {
                         type: 'text',
-                        text: '70 บาท',
+                        text: '70',
                         weight: 'bold',
                         size: 'lg',
                         color: '#2C8921FF',
+                        contents: []
                       },
-                    ],
-                    // spacing: 'sm',
-                    // margin: 'md',
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'lg',
+                        align: "end",
+                        contents: []
+                      },
+                    ]
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#277FE0FF',
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'ลบ',
+                        color: '#E2575EFF',
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'ลบ',
+                          text: 'ลบ'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
-                
               },
-              
             ],
             spacing: 'xl',
             paddingAll: '20px',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'baseline',
-                margin: 'md',
-                contents: [
-                  {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
-                  },
-                  
-                ],
-              },
-              {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'แก้ไข',
-                  text: 'แก้ไข'
-                }
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                margin: 'md',
-                contents: [
-                  {
-                    type: 'icon',
-                    size: 'lg',
-                    aspectRatio: '1:1',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
-                  },
-                ],
-              },
-              {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'ลบ',
-                  text: 'ลบ'
-                }
-              },
-            ],
-            // spacing: 'xl',
-            // paddingAll: '5px',
           },
           {
             type: 'separator',
@@ -392,72 +446,56 @@ module.exports = async function App(context) {
                     contents: [
                       {
                         type: 'text',
-                        text: '80 บาท',
+                        text: '80',
                         weight: 'bold',
                         size: 'lg',
                         color: '#2C8921FF',
+                        contents: []
                       },
-                    ],
-                    spacing: 'sm',
-                    margin: 'md',
+                      {
+                        type: 'text',
+                        text: 'บาท',
+                        weight: 'bold',
+                        size: 'lg',
+                        align: "end",
+                        contents: []
+                      },
+                    ]
+                  },
+                  {
+                    type: 'box',
+                    layout: 'baseline',
+                    contents: [
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#277FE0FF',
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                      {
+                        type: 'text',
+                        text: 'ลบ',
+                        color: '#E2575EFF',
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'ลบ',
+                          text: 'ลบ'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
             ],
             spacing: 'xl',
             paddingAll: '20px',
-          },
-          {
-            type: 'box',
-            layout: 'horizontal',
-            contents: [
-              {
-                type: 'box',
-                layout: 'baseline',
-                margin: 'md',
-                contents: [
-                  {
-                    type: 'icon',
-                    size: 'lg',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/pencil%20(1).png',
-                  },
-                  
-                ],
-              },
-              {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'แก้ไข',
-                  text: 'แก้ไข'
-                }
-              },
-              {
-                type: 'box',
-                layout: 'baseline',
-                margin: 'md',
-                contents: [
-                  {
-                    type: 'icon',
-                    size: 'lg',
-                    aspectRatio: '1:1',
-                    url:
-                      'https://raw.githubusercontent.com/chadaporn29797/project2020/main/image/garbage.png',
-                  },
-                ],
-              },
-              {
-                type: 'button',
-                action: {
-                  type: 'message',
-                  label: 'ลบ',
-                  text: 'ลบ'
-                }
-              },
-            ],
-            // spacing: 'xl',
-            // paddingAll: '5px',
           },
           
         ],
@@ -551,16 +589,30 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
+                        type: 'text',
                         text: 'เจ๊แดงปลานิลสด',
-                        color: '#928585FF',
+                        size: "sm",
+                        color: '#9F9898FF',
+                        contents: []
                       },
-                    ],
-                    size: 'md',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#DB9B6AFF',
+                        size: "sm",
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
@@ -609,16 +661,30 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
+                        type: 'text',
                         text: 'ศรีสะเกษ',
-                        color: '#928585FF',
+                        size: "sm",
+                        color: '#9F9898FF',
+                        contents: []
                       },
-                    ],
-                    size: 'md',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#DB9B6AFF',
+                        size: "sm",
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
@@ -667,16 +733,30 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
+                        type: 'text',
                         text: '0848346449',
-                        color: '#928585FF',
+                        size: "sm",
+                        color: '#9F9898FF',
+                        contents: []
                       },
-                    ],
-                    size: 'md',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#DB9B6AFF',
+                        size: "sm",
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
@@ -703,7 +783,6 @@ module.exports = async function App(context) {
                     size: 'full',
                   },
                 ],
-                // cornerRadius: '100px',
                 width: '40px',
                 height: '40px',
               },
@@ -725,16 +804,30 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
+                        type: 'text',
                         text: 'plasodbyjedang',
-                        color: '#928585FF',
+                        size: "sm",
+                        color: '#9F9898FF',
+                        contents: []
                       },
-                    ],
-                    size: 'md',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#DB9B6AFF',
+                        size: "sm",
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
@@ -783,16 +876,30 @@ module.exports = async function App(context) {
                     wrap: true,
                   },
                   {
-                    type: 'text',
+                    type: 'box',
+                    layout: 'baseline',
                     contents: [
                       {
-                        type: 'span',
+                        type: 'text',
                         text: '/เจ๊แดงปลานิลสด',
-                        color: '#928585FF',
+                        size: "sm",
+                        color: '#9F9898FF',
+                        contents: []
                       },
-                    ],
-                    size: 'md',
-                    wrap: true,
+                      {
+                        type: 'text',
+                        text: 'แก้ไข',
+                        color: '#DB9B6AFF',
+                        size: "sm",
+                        align: "end",
+                        action: {
+                          type: 'message',
+                          label: 'แก้ไข',
+                          text: 'แก้ไข'
+                        },
+                        contents: []
+                      },
+                    ]
                   },
                 ],
               },
@@ -2805,24 +2912,6 @@ module.exports = async function App(context) {
         },
       ],
       paddingAll: '0px',
-    },
-    
-    footer: {
-      type: 'box',
-      layout: 'horizontal',
-      backgroundColor: '#47E291FF',
-      contents: [
-        {
-          type: 'button',
-          action: {
-            type: 'message',
-            label: 'เพิ่มสินค้า',
-            text: 'เพิ่มสินค้า',
-          },
-          color: '#FFFFFFFF',
-          gravity: 'center',
-        },
-      ],
     },
     styles: {
       header: {
