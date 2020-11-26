@@ -2989,6 +2989,10 @@ module.exports = async function App(context) {
       longitude: 104.3300335
   });
 
+  } else if (context.event.text === 'test liff') {
+    const liffUrl = `https://liff.line.me/${process.env.LINE_LIFF_ID}`;
+    await context.sendText(liffUrl);
+
   } else if (context.event.text === 'null') {
     await context.sendText(
       'ยินดีต้อนรับสู่ไลน์บอท บายมั้ย นะครับ'
