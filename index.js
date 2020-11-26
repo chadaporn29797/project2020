@@ -12,7 +12,16 @@ const dbName = 'buymai';
  
 // Use connect method to connect to the server
 
-
+MongoClient.connect(url, function(err, client) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+ 
+  const db = client.db(dbName);
+ 
+  insertDocuments(db, function() {
+    client.close();
+  });
+});
 
 const insertDocuments = function(db, callback) {
   // Get the documents collection
